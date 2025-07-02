@@ -5,16 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blossom Cosmetics</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Blossom Cosmetics 💄</h1>
     <nav>
-      <button onclick="toggleForm()">list Member</button>
-      <button onclick="toggleForm()">Item Disc</button>
+      <button onclick="toggleForm()">List Member</button>
+      <!-- GANTI tombol ini jadi link ke #produk-list -->
+      <a href="#produk-list">
+        <button>Item Disc</button>
+      </a>
     </nav>
   </header>
 
+  <!-- PASTIKAN ID SESUAI -->
   <section class="produk-container" id="produk-list">
     <!-- Produk akan ditampilkan di sini -->
   </section>
