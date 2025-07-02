@@ -1,0 +1,42 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(#ffe0f0, #fff6fa);
+  color: #5a2d3d;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  padding: 2rem;
+  background-image: url('https://i.imgur.com/zvJbUMJ.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 1px 1px 2px #000000aa;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+section {
+  padding: 1.5rem;
+  margin: 1rem;
+  background-color: #ffe6f0;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ffcce0;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ffcce5;
+  color: #5a2d3d;
+}
