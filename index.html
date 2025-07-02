@@ -3,43 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blossom Cosmetics</title>
+  <title>Blossom Skincare</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
 </head>
 <body>
   <header>
-    <h1>Blossom Cosmetics 💄</h1>
+    <h1>Blossom Skincare 🌿</h1>
     <nav>
-      <button onclick="toggleForm()">List Member</button>
-      <!-- GANTI tombol ini jadi link ke #produk-list -->
-      <a href="#produk-list">
-        <button>Item Disc</button>
-      </a>
+      <button id="btnList">List Member</button>
+      <button>Item Disc</button>
     </nav>
   </header>
 
-  <!-- PASTIKAN ID SESUAI -->
-  <section class="produk-container" id="produk-list">
-    <!-- Produk akan ditampilkan di sini -->
+  <section class="products">
+    <div class="card">
+      <h2>Face Cleanser</h2>
+      <p><s>Rp65000</s> Rp58500</p>
+      <span>Diskon 10%</span>
+    </div>
+    <div class="card">
+      <h2>Toner Hydrate</h2>
+      <p><s>Rp80000</s> Rp64000</p>
+      <span>Diskon 20%</span>
+    </div>
+    <div class="card">
+      <h2>Serum Glow</h2>
+      <p><s>Rp120000</s> Rp102000</p>
+      <span>Diskon 15%</span>
+    </div>
   </section>
 
-  <section class="form-daftar" id="form-daftar">
-    <h2>Member</h2>
-    <form onsubmit="submitForm(event)">
-      <input type="text" placeholder="Kode Member" required />
-      <button type="submit">Daftar</button>
-    </form>
+  <!-- Form Member -->
+  <section class="member-form">
+    <h3>Member</h3>
+    <input type="text" id="kodeMember" placeholder="Kode Member" />
+    <button id="btnDaftar">Daftar</button>
+  </section>
+
+  <!-- List Member -->
+  <section id="member-list" class="hidden">
+    <h3>Daftar Member</h3>
+    <ul id="listMember">
+      <!-- Akan ditambahkan secara dinamis -->
+    </ul>
   </section>
 
   <footer>
-    <p>&copy; 2025 Blossom Cosmetics - Cantik Bersama Kami</p>
+    <p>© 2025 Blossom Skincare - Natural Beauty for You</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    const btnList = document.getElementById("btnList");
+    const btnDaftar = document.getElementById("btnDaftar");
+    const memberList = document.getElementById("member-list");
+    const listElement = document.getElementById("listMember");
+    const inputMember = document.getElementById("kodeMember");
+
+    const members = []; // data member
+
+    // Toggle tampil/sembunyi daftar member
+    btnList.addEventListener("click", () => {
+      memberList.classList.toggle("hidden");
+    });
+
+    // Tambah member baru saat daftar ditekan
+    btnDaftar.addEventListener("click", () => {
+      const kode = inputMember.value.trim();
+      if (kode) {
+        members.push(kode);
+        const li = document.createElement("li");
+        li.textContent = `${kode}`;
+        listElement.appendChild(li);
+        inputMember.value = "";
+        memberList.classList.remove("hidden"); // tampilkan list
+      } else {
+        alert("Kode member tidak boleh kosong!");
+      }
+    });
+  </script>
 </body>
 </html>
