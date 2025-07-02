@@ -81,3 +81,32 @@ footer {
   background-color: #ffc0cb;
   color: white;
 }
+
+.hidden {
+  display: none;
+}
+
+#member-list {
+  background-color: #fff0f5;
+  padding: 20px;
+  margin: 30px auto;
+  width: 300px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(255, 192, 203, 0.3);
+}
+
+#member-list h3 {
+  color: #c15656;
+  margin-bottom: 10px;
+}
+
+#member-list ul {
+  list-style-type: none;
+  padding: 0;
+  color: #444;
+}
+
+#member-list li {
+  margin: 5px 0;
+}
